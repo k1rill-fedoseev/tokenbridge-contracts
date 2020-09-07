@@ -78,31 +78,31 @@ There are two ways to deploy contracts:
 
 #### Install Dependencies
 ```bash
-npm install
+yarn install
 ```
 #### Deploy
 Please read the [README.md](deploy/README.md) in the `deploy` folder for instructions and .env file configuration
 
 #### Test
 ```bash
-npm test
+yarn workspace contracts test
 ```
 
 #### Run coverage tests
 ```bash
-npm run coverage
+yarn workspace contracts coverage
 ```
 
-The results can be found in the `coverage` directory.
+The results can be found in the `contracts/coverage` directory.
 
 #### Flatten
 Fattened contracts can be used to verify the contract code in a block explorer like BlockScout or Etherscan.
 The following command will prepare flattened version of the contracts:
 
 ```bash
-npm run flatten
+yarn workspace contracts flatten
 ```
-The flattened contracts can be found in the `flats` directory.
+The flattened contracts can be found in the `contracts/flats` directory.
 
 ### Deployment in the Docker environment
 [Docker](https://www.docker.com/community-edition) and [Docker Compose](https://docs.docker.com/compose/install/) can be used to deploy contracts without NodeJS installed on the system.
@@ -137,9 +137,9 @@ _Note: The container must be rebuilt every time the code in a contract or deploy
 
 #### Test contract and run coverage (if needed)
 ```bash
-$ docker-compose run bridge-contracts bash
-$ npm test
-$ npm run coverage
+$ docker-compose run dev bash
+$ yarn test
+$ yarn workspace contracts coverage
 ```
 
 #### Shutdown the container
